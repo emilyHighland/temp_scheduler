@@ -1,5 +1,7 @@
+import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from "@react-navigation/stack";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { FontAwesome5, AntDesign, Feather } from "@expo/vector-icons";
 import MyScheduleScreen from './src/screens/MyScheduleScreen';
@@ -10,12 +12,13 @@ import ProfileScreen from './src/screens/ProfileScreen';
 
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName='My Schedule'
+        initialRouteName='Schedule'
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, size, color }) => {
             let iconName;
